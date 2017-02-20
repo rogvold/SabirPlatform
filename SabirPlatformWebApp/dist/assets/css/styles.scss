@@ -1,0 +1,745 @@
+$header_height: 50px;
+$header_background: #FFFFFF;
+$sidebar_width: 200px;
+$sidebar_background: #343268;
+
+$logo_background: #343268;
+
+$content_background: #F3F3F8;
+
+$box_border_radius: 4px;
+
+$sidebar_link_color: #6562A3;
+$sidebar_selected_link_background: #48468E;
+
+$primary_button_color: #48468E;
+
+$user_name_color: #858598;
+
+$container_width: 780px;
+
+$dialog_top_offset: 50px;
+
+$auth_panel_width: 400px;
+
+.ui.button.primary{
+  background-color: #48468E !important;
+  color: white;
+
+  i{
+    margin-left: 10px;
+    margin-right: -7px;
+  }
+
+  &:hover{
+    opacity: 0.85;
+  }
+}
+
+.auth_panel{
+  width: $auth_panel_width;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: white;
+  position: relative;
+  padding: 10px;
+  border-radius: $box_border_radius;
+
+  .switcher_placeholder {
+    .switcher{
+        text-align: center;
+       .switcher_link{
+         cursor: pointer;
+         margin-left: 5px;
+         text-decoration: underline;
+         &:hover{
+           //font-weight: bold;
+         }
+       }
+    }
+  }
+}
+
+
+
+.dialog{
+
+  .dialog_overlay {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    /*background: rgba(150, 181, 116, 0.8);*/
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .main_panel{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+    .dialog_content_placeholder{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      text-align: center;
+
+      .dialog_content{
+        //position: absolute;
+        //top: 50%;
+        //left: 50%;
+        //transform: translate(-50%, -50%);
+        display: inline-block;
+        margin-top: $dialog_top_offset;
+        max-height: calc(100vh - #{$dialog_top_offset});
+        //height: calc(100vh - #{$dialog_top_offset});
+        height: auto;
+        //overflow-y: auto;
+
+        text-align: left;
+
+
+        .inner_content{
+          width: 100%;
+          height: 100%;
+          max-height: 80vh;
+          /*overflow-y: ;*/
+          position: relative;
+        }
+
+      }
+
+      .close_button_placeholder{
+        position: absolute;
+        right: -26px;
+        top: -26px;
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 1000px;
+        /*background-color: white;*/
+        cursor: pointer;
+        opacity: 0.9;
+        color: white;
+        transition: all .3s ease-in-out;
+
+        &:hover{
+          opacity: 1;
+          transform: scale(1.1);
+        }
+
+        i{
+          margin-right: 0px !important;
+          font-weight: 100 !important;
+          opacity: 0.7;
+          vertical-align: top;
+        }
+
+      }
+
+
+    }
+
+  }
+
+}
+
+
+
+.corporate_template{
+  width: 100vw;
+  height: 100vh;
+
+  .left_sidebar{
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    display: inline-block;
+    vertical-align: top;
+    width: $sidebar_width;
+    background: $sidebar_background;
+
+    .logo_placeholder{
+      height: $header_height;
+      width: 100%;
+      background: $logo_background;
+      padding: 4px;
+
+      .logo{
+        height: 100%;
+      }
+
+    }
+
+    .sidebar_placeholder{
+      height: calc(100% - #{$header_height});
+      max-height: calc(100% - #{$header_height});
+      overflow-y: auto;
+      width: 100%;
+
+      .sidebar{
+        width: 100%;
+        .links_placeholder{
+          width: 100%;
+          margin-top: 30px;
+          .links{
+            width: 100%;
+            .link{
+              width: 100%;
+              padding: 15px;
+              font-size: 18px;
+              color: $sidebar_link_color;
+              cursor: pointer;
+              &.selected, &:hover{
+                font-weight: bold;
+                background-color: $sidebar_selected_link_background;
+                color: white;
+              }
+              &.selected{
+                cursor: default;
+              }
+
+              &.logout_link{
+                position: absolute;
+                bottom: 0px;
+              }
+
+            }
+
+          }
+
+        }
+      }
+
+    }
+
+  }
+
+  .main_area{
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - #{$sidebar_width});
+    height: 100%;
+
+    & > .header{
+      background: $header_background;
+      height: $header_height;
+      border-bottom: 1px solid lightgrey;
+
+      .header_inner{
+        height: 100%;
+        line-height: $header_height;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: relative;
+
+        .left_placeholder{
+          position: absolute;
+          height: 100%;
+          left: 10px;
+
+          .current_page_name_placeholder{
+            .current_page_name{
+              font-size: 18px;
+              font-weight: bold;
+              color: $user_name_color;
+            }
+          }
+
+        }
+
+        .right_placeholder{
+          height: 100%;
+          position: absolute;
+          right: 10px;
+
+          .current_user_placeholder{
+            height: 100%;
+
+            .name_placeholder{
+              display: inline-block;
+              vertical-align: top;
+              color: $user_name_color;
+              font-weight: bold;
+            }
+
+            .avatar_placeholder{
+              height: 100%;
+              display: inline-block;
+              vertical-align: top;
+              padding: 6px;
+              img{
+                height: 100%;
+                border-radius: 1000px;
+              }
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+    .content{
+      height: calc(100% - #{$header_height} - 1px);
+      max-height: calc(100% - #{$header_height} - 1px);
+      overflow-y: auto;
+      background: $content_background;
+      position: relative;
+    }
+
+  }
+
+}
+
+.users_panel{
+
+  .users_list{
+
+    .user_item{
+      display: inline-block;
+      vertical-align: top;
+      margin: 5px;
+      width: calc(25% - 10px);
+      border-radius: 4px;
+      background-color: white;
+      cursor: pointer;
+
+      .top_placeholder{
+        .avatar_placeholder{
+          padding: 20px;
+          .avatar{
+            width: 100%;
+            border-radius: $box_border_radius;
+          }
+        }
+      }
+
+      .medium_placeholder{
+        .name_placeholder{
+
+          .name{
+            font-weight: bold;
+            text-align: center;
+            padding: 5px;
+            color: $user_name_color;
+          }
+
+        }
+      }
+
+      .bottom_placeholder{
+        margin-top: 15px;
+
+        .info_links_placeholder{
+          .info_item{
+            margin-bottom: 10px;
+            color: $user_name_color;
+            text-align: center;
+
+            .icon_placeholder{
+              background-color: #E2E5EE;
+              color: #9098B1;
+              padding: 10px;
+              padding-top: 8px;
+              padding-bottom: 8px;
+              margin-top: 2px;
+              border-radius: 1000px;
+              display: inline-block;
+              margin-right: 10px;
+              vertical-align: top;
+              i{
+                margin-right: 0px !important;
+              }
+            }
+
+            .info_placeholder{
+              display: inline-block;
+              vertical-align: top;
+              color: #A6A7B7;
+              text-align: left;
+              .top{
+
+              }
+              .bottom{
+                font-weight: bold;
+              }
+            }
+
+          }
+        }
+
+      }
+
+      &:hover .medium_placeholder .name_placeholder .name, &:hover .bottom_placeholder .icon_placeholder i{
+        color: #6565FB !important;
+      }
+
+      &:hover{
+        opacity: 0.8;
+      }
+
+    }
+
+  }
+}
+
+.user_panel, .edit_profile_panel{
+  //background-color: $content_background;
+  background-color: white;
+  position: relative;
+  //width: $container_width;
+  width: 640px;
+
+  margin: 0 auto;
+  //height: 100vh;
+  min-height: 100vh;
+  overflow-y: auto;
+  border-radius: 4px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+
+  .top{
+    text-align: center;
+
+    .avatar_placeholder{
+      display: inline-block;
+      text-align: center;
+      //padding: 10px;
+      padding-top: 10px;
+      position: relative;
+      height: auto;
+      .avatar{
+        display: inline-block;
+        //width: 160px;
+        width: 120px;
+      }
+      .edit_placeholder{
+        display: none;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        //text-align: center;
+        //width: 100%;
+        padding-top: 10px;
+      }
+      //&:hover
+      .edit_placeholder{
+        display: block;
+        color: #48468E;
+        .span{
+          padding: 5px;
+          border-radius: 1000px;
+          background-color: rgba(0, 0, 0, 0.6);
+          color: white;
+        }
+        i{
+          margin-right: 0px !important;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .name_placeholder{
+      .name{
+        text-align: center;
+        color: $user_name_color;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 36px;
+      }
+    }
+
+  }
+
+  .bottom{
+    margin-bottom: 20vh;
+    position: relative;
+
+    .tabs_placeholder{
+
+      text-align: center;
+      margin-top: 20px;
+      line-height: 10px;
+
+      .tab{
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding-bottom: 10px;
+        cursor: pointer;
+        color: $user_name_color;
+        opacity: 0.7;
+        &.active{
+          color: $primary_button_color;
+          font-weight: bold;
+          opacity: 0.99;
+          cursor: default;
+          padding-bottom: 7px;
+          border-bottom: 3px solid $primary_button_color;
+        }
+        &:hover{
+          opacity: 0.99;
+          color: $primary_button_color;
+          //padding-bottom: 7px;
+          //border-bottom: 3px solid $primary_button_color;
+        }
+      }
+    }
+
+    .current_tab{
+      padding: 10px;
+      margin-top: 10px;
+
+
+      .update_about_form{
+        .prompt{
+          opacity: 0.6;
+          margin-bottom: 10px;
+          text-align: center;
+        }
+      }
+
+
+      ui.button.primary{
+        i{
+          margin-right: 5px !important;
+          margin-left: 5px !important;
+        }
+      }
+
+      .update_about_form{
+
+        .button_placeholder{
+          text-align: right;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+
+.container{
+  width: $container_width;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.search_input_placeholder input{
+  background-color: $content_background !important;
+}
+
+.session_item{
+
+  .header{
+    color: $user_name_color;
+  }
+
+  .content{
+
+    .extended_content{
+      min-height: 120px;
+    }
+
+  }
+
+}
+
+.searchable_users_panel{
+
+  .search_panel{
+    padding: 6px;
+
+    .search_input_placeholder{
+      background-color: white;
+      border-radius: 4px;
+      padding: 10px;
+
+      input {
+        border: none !important;
+      }
+
+      i{
+        left: 8px !important;
+      }
+
+    }
+
+  }
+
+}
+
+.express_users_panel{
+
+  & > .add_new_user_placeholder{
+    line-height: $header_height;
+    height: 55px;
+    font-size: 16px;
+
+    border-bottom: 1px solid #E1E1E9;
+
+    position: relative;
+    margin: 0 auto;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+
+    .text_placeholder{
+      position: absolute;
+      left: 0px;
+      height: 100%;
+      color: #77768C;
+      font-weight: bold;
+    }
+
+    .button_placeholder{
+      position: absolute;
+      right: 0px;
+      height: 100%;
+
+      .ui.button{
+        background-color: #48468E;
+        color: white;
+        margin-right: 0px !important;
+
+        i{
+          margin-left: 10px;
+          margin-right: -7px;
+        }
+
+        &:hover{
+          opacity: 0.85;
+        }
+
+      }
+
+    }
+
+  }
+
+  .searchable_users_panel_placeholder{
+
+    .loading_placeholder{
+      opacity: 0.6;
+      font-size: 16px;
+      padding: 10px;
+      text-align: center;
+    }
+
+  }
+
+}
+
+.add_new_user_panel{
+  position: relative;
+  width: 400px;
+  //background-color: white;
+  padding: 10px;
+  line-height: 20px;
+  border-radius: $box_border_radius;
+
+  .active_tab_content{
+    border: none;
+  }
+
+}
+
+
+$calendar_bubble_size: 40px;
+
+.calendar_spot{
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  cursor: pointer;
+  &:hover{
+    opacity: 0.9;
+  }
+  .calendar_inner{
+    border-radius: 1000px;
+    background-color: $user_name_color;
+    color: white;
+    font-weight: bold;
+    width: $calendar_bubble_size;
+    height: $calendar_bubble_size;
+    line-height: $calendar_bubble_size;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-top:10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  &:hover .calendar_inner{
+    background-color: #343268;
+  }
+
+}
+
+.sessions_calendar_panel{
+  .day_placeholder.selected{
+    background-color: #F3F3F8;
+    .calendar_spot{
+      .calendar_inner{
+        background-color: #343268;
+      }
+    }
+  }
+}
+
+
+.edit_profile_panel{
+  padding: 10px;
+  position: relative;
+  .avatar_placeholder{
+    text-align: center;
+    img.avatar{
+      border-radius: $box_border_radius;
+    }
+    .edit_placeholder{
+      text-align: center;
+      span{
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
+.initializing_placeholder{
+  padding: 40px;
+  padding-top: 100px;
+  text-align: center;
+  font-size: 30px;
+  opacity: 0.4;
+}
+
+.upload_image_panel{
+  position: relative;
+  min-height: 120px;
+  text-align: center;
+  background: white;
+  padding: 10px;
+  border-radius: $box_border_radius;
+
+  .info_text{
+    font-size: 18px;
+    color: $user_name_color;
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+
+}

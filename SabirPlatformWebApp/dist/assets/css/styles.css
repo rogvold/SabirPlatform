@@ -1,0 +1,436 @@
+.ui.button.primary {
+  background-color: #48468E !important;
+  color: white; }
+  .ui.button.primary i {
+    margin-left: 10px;
+    margin-right: -7px; }
+  .ui.button.primary:hover {
+    opacity: 0.85; }
+
+.auth_panel {
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: white;
+  position: relative;
+  padding: 10px;
+  border-radius: 4px; }
+  .auth_panel .switcher_placeholder .switcher {
+    text-align: center; }
+    .auth_panel .switcher_placeholder .switcher .switcher_link {
+      cursor: pointer;
+      margin-left: 5px;
+      text-decoration: underline; }
+
+.dialog .dialog_overlay {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  /*background: rgba(150, 181, 116, 0.8);*/
+  background: rgba(0, 0, 0, 0.9); }
+
+.dialog .main_panel {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px; }
+  .dialog .main_panel .dialog_content_placeholder {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center; }
+    .dialog .main_panel .dialog_content_placeholder .dialog_content {
+      display: inline-block;
+      margin-top: 50px;
+      max-height: calc(100vh - 50px);
+      height: auto;
+      text-align: left; }
+      .dialog .main_panel .dialog_content_placeholder .dialog_content .inner_content {
+        width: 100%;
+        height: 100%;
+        max-height: 80vh;
+        /*overflow-y: ;*/
+        position: relative; }
+    .dialog .main_panel .dialog_content_placeholder .close_button_placeholder {
+      position: absolute;
+      right: -26px;
+      top: -26px;
+      width: 26px;
+      height: 26px;
+      line-height: 26px;
+      font-size: 20px;
+      text-align: center;
+      border-radius: 1000px;
+      /*background-color: white;*/
+      cursor: pointer;
+      opacity: 0.9;
+      color: white;
+      transition: all .3s ease-in-out; }
+      .dialog .main_panel .dialog_content_placeholder .close_button_placeholder:hover {
+        opacity: 1;
+        transform: scale(1.1); }
+      .dialog .main_panel .dialog_content_placeholder .close_button_placeholder i {
+        margin-right: 0px !important;
+        font-weight: 100 !important;
+        opacity: 0.7;
+        vertical-align: top; }
+
+.corporate_template {
+  width: 100vw;
+  height: 100vh; }
+  .corporate_template .left_sidebar {
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    background: #343268; }
+    .corporate_template .left_sidebar .logo_placeholder {
+      height: 50px;
+      width: 100%;
+      background: #343268;
+      padding: 4px; }
+      .corporate_template .left_sidebar .logo_placeholder .logo {
+        height: 100%; }
+    .corporate_template .left_sidebar .sidebar_placeholder {
+      height: calc(100% - 50px);
+      max-height: calc(100% - 50px);
+      overflow-y: auto;
+      width: 100%; }
+      .corporate_template .left_sidebar .sidebar_placeholder .sidebar {
+        width: 100%; }
+        .corporate_template .left_sidebar .sidebar_placeholder .sidebar .links_placeholder {
+          width: 100%;
+          margin-top: 30px; }
+          .corporate_template .left_sidebar .sidebar_placeholder .sidebar .links_placeholder .links {
+            width: 100%; }
+            .corporate_template .left_sidebar .sidebar_placeholder .sidebar .links_placeholder .links .link {
+              width: 100%;
+              padding: 15px;
+              font-size: 18px;
+              color: #6562A3;
+              cursor: pointer; }
+              .corporate_template .left_sidebar .sidebar_placeholder .sidebar .links_placeholder .links .link.selected, .corporate_template .left_sidebar .sidebar_placeholder .sidebar .links_placeholder .links .link:hover {
+                font-weight: bold;
+                background-color: #48468E;
+                color: white; }
+              .corporate_template .left_sidebar .sidebar_placeholder .sidebar .links_placeholder .links .link.selected {
+                cursor: default; }
+              .corporate_template .left_sidebar .sidebar_placeholder .sidebar .links_placeholder .links .link.logout_link {
+                position: absolute;
+                bottom: 0px; }
+  .corporate_template .main_area {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 200px);
+    height: 100%; }
+    .corporate_template .main_area > .header {
+      background: #FFFFFF;
+      height: 50px;
+      border-bottom: 1px solid lightgrey; }
+      .corporate_template .main_area > .header .header_inner {
+        height: 100%;
+        line-height: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: relative; }
+        .corporate_template .main_area > .header .header_inner .left_placeholder {
+          position: absolute;
+          height: 100%;
+          left: 10px; }
+          .corporate_template .main_area > .header .header_inner .left_placeholder .current_page_name_placeholder .current_page_name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #858598; }
+        .corporate_template .main_area > .header .header_inner .right_placeholder {
+          height: 100%;
+          position: absolute;
+          right: 10px; }
+          .corporate_template .main_area > .header .header_inner .right_placeholder .current_user_placeholder {
+            height: 100%; }
+            .corporate_template .main_area > .header .header_inner .right_placeholder .current_user_placeholder .name_placeholder {
+              display: inline-block;
+              vertical-align: top;
+              color: #858598;
+              font-weight: bold; }
+            .corporate_template .main_area > .header .header_inner .right_placeholder .current_user_placeholder .avatar_placeholder {
+              height: 100%;
+              display: inline-block;
+              vertical-align: top;
+              padding: 6px; }
+              .corporate_template .main_area > .header .header_inner .right_placeholder .current_user_placeholder .avatar_placeholder img {
+                height: 100%;
+                border-radius: 1000px; }
+    .corporate_template .main_area .content {
+      height: calc(100% - 50px - 1px);
+      max-height: calc(100% - 50px - 1px);
+      overflow-y: auto;
+      background: #F3F3F8;
+      position: relative; }
+
+.users_panel .users_list .user_item {
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px;
+  width: calc(25% - 10px);
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer; }
+  .users_panel .users_list .user_item .top_placeholder .avatar_placeholder {
+    padding: 20px; }
+    .users_panel .users_list .user_item .top_placeholder .avatar_placeholder .avatar {
+      width: 100%;
+      border-radius: 4px; }
+  .users_panel .users_list .user_item .medium_placeholder .name_placeholder .name {
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    color: #858598; }
+  .users_panel .users_list .user_item .bottom_placeholder {
+    margin-top: 15px; }
+    .users_panel .users_list .user_item .bottom_placeholder .info_links_placeholder .info_item {
+      margin-bottom: 10px;
+      color: #858598;
+      text-align: center; }
+      .users_panel .users_list .user_item .bottom_placeholder .info_links_placeholder .info_item .icon_placeholder {
+        background-color: #E2E5EE;
+        color: #9098B1;
+        padding: 10px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-top: 2px;
+        border-radius: 1000px;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: top; }
+        .users_panel .users_list .user_item .bottom_placeholder .info_links_placeholder .info_item .icon_placeholder i {
+          margin-right: 0px !important; }
+      .users_panel .users_list .user_item .bottom_placeholder .info_links_placeholder .info_item .info_placeholder {
+        display: inline-block;
+        vertical-align: top;
+        color: #A6A7B7;
+        text-align: left; }
+        .users_panel .users_list .user_item .bottom_placeholder .info_links_placeholder .info_item .info_placeholder .bottom {
+          font-weight: bold; }
+  .users_panel .users_list .user_item:hover .medium_placeholder .name_placeholder .name, .users_panel .users_list .user_item:hover .bottom_placeholder .icon_placeholder i {
+    color: #6565FB !important; }
+  .users_panel .users_list .user_item:hover {
+    opacity: 0.8; }
+
+.user_panel, .edit_profile_panel {
+  background-color: white;
+  position: relative;
+  width: 640px;
+  margin: 0 auto;
+  min-height: 100vh;
+  overflow-y: auto;
+  border-radius: 4px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px; }
+  .user_panel .top, .edit_profile_panel .top {
+    text-align: center; }
+    .user_panel .top .avatar_placeholder, .edit_profile_panel .top .avatar_placeholder {
+      display: inline-block;
+      text-align: center;
+      padding-top: 10px;
+      position: relative;
+      height: auto; }
+      .user_panel .top .avatar_placeholder .avatar, .edit_profile_panel .top .avatar_placeholder .avatar {
+        display: inline-block;
+        width: 120px; }
+      .user_panel .top .avatar_placeholder .edit_placeholder, .edit_profile_panel .top .avatar_placeholder .edit_placeholder {
+        display: none;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        padding-top: 10px; }
+      .user_panel .top .avatar_placeholder .edit_placeholder, .edit_profile_panel .top .avatar_placeholder .edit_placeholder {
+        display: block;
+        color: #48468E; }
+        .user_panel .top .avatar_placeholder .edit_placeholder .span, .edit_profile_panel .top .avatar_placeholder .edit_placeholder .span {
+          padding: 5px;
+          border-radius: 1000px;
+          background-color: rgba(0, 0, 0, 0.6);
+          color: white; }
+        .user_panel .top .avatar_placeholder .edit_placeholder i, .edit_profile_panel .top .avatar_placeholder .edit_placeholder i {
+          margin-right: 0px !important;
+          cursor: pointer; }
+    .user_panel .top .name_placeholder .name, .edit_profile_panel .top .name_placeholder .name {
+      text-align: center;
+      color: #858598;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 36px; }
+  .user_panel .bottom, .edit_profile_panel .bottom {
+    margin-bottom: 20vh;
+    position: relative; }
+    .user_panel .bottom .tabs_placeholder, .edit_profile_panel .bottom .tabs_placeholder {
+      text-align: center;
+      margin-top: 20px;
+      line-height: 10px; }
+      .user_panel .bottom .tabs_placeholder .tab, .edit_profile_panel .bottom .tabs_placeholder .tab {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding-bottom: 10px;
+        cursor: pointer;
+        color: #858598;
+        opacity: 0.7; }
+        .user_panel .bottom .tabs_placeholder .tab.active, .edit_profile_panel .bottom .tabs_placeholder .tab.active {
+          color: #48468E;
+          font-weight: bold;
+          opacity: 0.99;
+          cursor: default;
+          padding-bottom: 7px;
+          border-bottom: 3px solid #48468E; }
+        .user_panel .bottom .tabs_placeholder .tab:hover, .edit_profile_panel .bottom .tabs_placeholder .tab:hover {
+          opacity: 0.99;
+          color: #48468E; }
+    .user_panel .bottom .current_tab, .edit_profile_panel .bottom .current_tab {
+      padding: 10px;
+      margin-top: 10px; }
+      .user_panel .bottom .current_tab .update_about_form .prompt, .edit_profile_panel .bottom .current_tab .update_about_form .prompt {
+        opacity: 0.6;
+        margin-bottom: 10px;
+        text-align: center; }
+      .user_panel .bottom .current_tab ui.button.primary i, .edit_profile_panel .bottom .current_tab ui.button.primary i {
+        margin-right: 5px !important;
+        margin-left: 5px !important; }
+      .user_panel .bottom .current_tab .update_about_form .button_placeholder, .edit_profile_panel .bottom .current_tab .update_about_form .button_placeholder {
+        text-align: right; }
+
+.container {
+  width: 780px;
+  margin: 0 auto;
+  padding: 5px; }
+
+.search_input_placeholder input {
+  background-color: #F3F3F8 !important; }
+
+.session_item .header {
+  color: #858598; }
+
+.session_item .content .extended_content {
+  min-height: 120px; }
+
+.searchable_users_panel .search_panel {
+  padding: 6px; }
+  .searchable_users_panel .search_panel .search_input_placeholder {
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px; }
+    .searchable_users_panel .search_panel .search_input_placeholder input {
+      border: none !important; }
+    .searchable_users_panel .search_panel .search_input_placeholder i {
+      left: 8px !important; }
+
+.express_users_panel > .add_new_user_placeholder {
+  line-height: 50px;
+  height: 55px;
+  font-size: 16px;
+  border-bottom: 1px solid #E1E1E9;
+  position: relative;
+  margin: 0 auto;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 10px;
+  padding-bottom: 10px; }
+  .express_users_panel > .add_new_user_placeholder .text_placeholder {
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    color: #77768C;
+    font-weight: bold; }
+  .express_users_panel > .add_new_user_placeholder .button_placeholder {
+    position: absolute;
+    right: 0px;
+    height: 100%; }
+    .express_users_panel > .add_new_user_placeholder .button_placeholder .ui.button {
+      background-color: #48468E;
+      color: white;
+      margin-right: 0px !important; }
+      .express_users_panel > .add_new_user_placeholder .button_placeholder .ui.button i {
+        margin-left: 10px;
+        margin-right: -7px; }
+      .express_users_panel > .add_new_user_placeholder .button_placeholder .ui.button:hover {
+        opacity: 0.85; }
+
+.express_users_panel .searchable_users_panel_placeholder .loading_placeholder {
+  opacity: 0.6;
+  font-size: 16px;
+  padding: 10px;
+  text-align: center; }
+
+.add_new_user_panel {
+  position: relative;
+  width: 400px;
+  padding: 10px;
+  line-height: 20px;
+  border-radius: 4px; }
+  .add_new_user_panel .active_tab_content {
+    border: none; }
+
+.calendar_spot {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  cursor: pointer; }
+  .calendar_spot:hover {
+    opacity: 0.9; }
+  .calendar_spot .calendar_inner {
+    border-radius: 1000px;
+    background-color: #858598;
+    color: white;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center; }
+  .calendar_spot:hover .calendar_inner {
+    background-color: #343268; }
+
+.sessions_calendar_panel .day_placeholder.selected {
+  background-color: #F3F3F8; }
+  .sessions_calendar_panel .day_placeholder.selected .calendar_spot .calendar_inner {
+    background-color: #343268; }
+
+.edit_profile_panel {
+  padding: 10px;
+  position: relative; }
+  .edit_profile_panel .avatar_placeholder {
+    text-align: center; }
+    .edit_profile_panel .avatar_placeholder img.avatar {
+      border-radius: 4px; }
+    .edit_profile_panel .avatar_placeholder .edit_placeholder {
+      text-align: center; }
+      .edit_profile_panel .avatar_placeholder .edit_placeholder span {
+        cursor: pointer; }
+
+.initializing_placeholder {
+  padding: 40px;
+  padding-top: 100px;
+  text-align: center;
+  font-size: 30px;
+  opacity: 0.4; }
+
+.upload_image_panel {
+  position: relative;
+  min-height: 120px;
+  text-align: center;
+  background: white;
+  padding: 10px;
+  border-radius: 4px; }
+  .upload_image_panel .info_text {
+    font-size: 18px;
+    color: #858598;
+    opacity: 0.8;
+    margin-bottom: 20px; }
