@@ -7,7 +7,7 @@ import 'babel-polyfill'
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 import {Provider} from 'react-redux';
@@ -24,9 +24,24 @@ import {reducer} from './redux/reducers'
 
 const loggerMiddleware = createLogger()
 
+//use this store if you do not want to support the redux-persist
+// const store = createStore(
+//     reducer,
+//     applyMiddleware(thunkMiddleware, loggerMiddleware)
+// )
+
+//redux-persist
+import {persistStore, autoRehydrate} from 'redux-persist'
+import localForage from 'localforage'
+import immutableTransform from 'redux-persist-transform-immutable'
+
 const store = createStore(
     reducer,
-    applyMiddleware(thunkMiddleware, loggerMiddleware)
+    undefined,
+    compose(
+        applyMiddleware(thunkMiddleware, loggerMiddleware),
+        autoRehydrate({log: true})
+    )
 )
 
 ParseAPI.initParse();
@@ -68,4 +83,7 @@ let init = () => {
     }
 }
 
-store.dispatch(init());
+persistStore(store, {storage: localForage, transforms: [immutableTransform()]}, () => {
+    store.dispatch(init());
+})
+

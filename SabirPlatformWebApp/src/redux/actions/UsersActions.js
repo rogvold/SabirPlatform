@@ -1,9 +1,8 @@
-/**
- * Created by sabir on 19.02.17.
- */
 
-import * as types from '../ActionTypes'
+import * as types from '../ActionTypes.js'
 import ParseAPI from '../../api/ParseAPI.js';
+
+import localForage from 'localforage'
 
 //LOGIN
 let startLoggingIn = () => {
@@ -85,10 +84,12 @@ export function logOut(){
     return (dispatch, getState) => {
         var usersState = getState().users;
         console.log('usersState = ', usersState);
-        if (usersState.currentUser == undefined){
+        if (usersState.currentUserId == undefined){
             return Promise.resolve()
         }
         dispatch(startLoggingOut());
+        localForage.clear();
+
         return ParseAPI.logOutAsPromise().then(
             () => dispatch(onLoggedOut()),
             () => dispatch(onLogoutFail())
@@ -116,9 +117,10 @@ let authInitSuccess = (user) => {
 //thunk
 export function initializeAuthorization(){
     return (dispatch, getState) => {
-        if (getState().users.initialized == true){
-            return Promise.resolve()
-        }
+        // if (getState().users.initialized == true){
+        //     return Promise.resolve()
+        // }
+
         dispatch(startAuthInit());
         return ParseAPI.fetchCurrentUserAsPromise().then(
             user => dispatch(authInitSuccess(user)),
@@ -204,9 +206,9 @@ let loadUserLinksSuccess = (links, users) => {
 //thunks
 export function  loadUserUserLinks(userId){
     return (dispatch, getState) => {
-        let {currentUser} = getState().users;
-        if (userId == undefined && currentUser != undefined){
-            userId = currentUser.id;
+        let {currentUserId} = getState().users;
+        if (userId == undefined && currentUserId != undefined){
+            userId = currentUserId
         }
         if (userId == undefined){
             return;

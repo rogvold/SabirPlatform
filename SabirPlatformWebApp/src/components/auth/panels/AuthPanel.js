@@ -75,8 +75,8 @@ const mapStateToProps = (state) => {
     return {
         loading: state.users.loading,
         error: state.users.error,
-        isLoggedIn: (state.users.currentUser != undefined),
-        currentUser: state.users.currentUser
+        isLoggedIn: (state.users.currentUserId != undefined),
+        currentUser: state.users.usersMap.get(state.users.currentUserId),
     }
 }
 

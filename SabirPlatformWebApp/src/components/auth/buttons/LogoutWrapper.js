@@ -56,9 +56,9 @@ class LogoutWrapper extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        currentUser: state.users.currentUser,
+        currentUser: state.users.usersMap.get(state.users.currentUserId),
         loading: state.users.loading,
-        isLoggedIn: (state.users.currentUser != undefined)
+        isLoggedIn: (state.users.currentUserId != undefined)
     }
 }
 

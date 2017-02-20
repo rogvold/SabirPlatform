@@ -129,7 +129,7 @@ class LeftSidebarTemplate extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        currentUser: state.users.currentUser == undefined ? undefined : state.users.usersMap.get(state.users.currentUser.id),
+        currentUser: state.users.currentUserId == undefined ? undefined : state.users.usersMap.get(state.users.currentUserId),
         loading: state.users.loading
     }
 }

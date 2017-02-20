@@ -66,8 +66,10 @@ class App extends React.Component {
     }
 
     render() {
+        let {initialized, currentUser} = this.props;
+        console.log('rendering App: initialized, currentUser = ', initialized, currentUser);
 
-        if (this.props.initialized == false){
+        if (initialized == undefined || initialized == false){
             return (
                 <div className={'initializing_placeholder'} >
                     загрузка...
@@ -75,8 +77,7 @@ class App extends React.Component {
             );
         }
 
-        var user = this.props.currentUser;
-        if (user == undefined){
+        if (currentUser == undefined){
             return (
                 <LoginApp />
             );
@@ -89,7 +90,7 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        currentUser: state.users.currentUser,
+        currentUser: state.users.currentUserId == undefined ? undefined : state.users.usersMap.get(state.users.currentUserId),
         initialized: state.users.initialized
     }
 }

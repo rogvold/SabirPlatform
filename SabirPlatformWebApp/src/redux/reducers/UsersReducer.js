@@ -1,8 +1,8 @@
 /**
- * Created by sabir on 19.02.17.
+ * Created by sabir on 04.02.17.
  */
 
-import * as types from '../ActionTypes'
+import * as types from '../ActionTypes.js'
 import {Map, OrderedMap, Set, List} from 'immutable';
 
 const initialState = {
@@ -10,7 +10,7 @@ const initialState = {
     loading: false,
     usersMap: Map(),
     linksMap: Map(),
-    currentUser: undefined,
+    currentUserId: undefined,
     error: undefined
 }
 
@@ -22,7 +22,7 @@ const stopLoading = (state, action) => {
     return { ...state, loading: false, error: action.error}
 }
 
-const UsersReducer =  (state = initialState, action = {}) => {
+const UsersReducers =  (state = initialState, action = {}) => {
 
     switch (action.type) {
 
@@ -32,7 +32,7 @@ const UsersReducer =  (state = initialState, action = {}) => {
         case types.LOGIN_SUCCESS:
             return {
                 ...state,
-                currentUser: action.user,
+                currentUserId: action.user.id,
                 usersMap: state.usersMap.set(action.user.id, action.user),
                 loading: false
             }
@@ -49,7 +49,7 @@ const UsersReducer =  (state = initialState, action = {}) => {
         case types.SIGNUP_SUCCESS:
             return {
                 ...state,
-                currentUser: action.user,
+                currentUserId: action.user.id,
                 usersMap: state.usersMap.set(action.user.id, action.user),
                 loading: false
             }
@@ -62,7 +62,7 @@ const UsersReducer =  (state = initialState, action = {}) => {
             return stopLoading(state, action)
 
         case  types.LOGOUT_SUCCESS:
-            return {...state, currentUser: undefined, loading: false, error: undefined}
+            return {...state, currentUserId: undefined, loading: false, error: undefined}
 
         case types.INITIALIZE_AUTH:
             return {...state, loading: true, initialized: false}
@@ -74,7 +74,7 @@ const UsersReducer =  (state = initialState, action = {}) => {
             return {...state,
                 loading: false,
                 initialized: true,
-                currentUser: action.user,
+                currentUserId: (action.user == undefined) ? undefined : action.user.id,
                 usersMap: (action.user == undefined) ? state.usersMap : state.usersMap.set(action.user.id, action.user)
             }
 
@@ -104,6 +104,7 @@ const UsersReducer =  (state = initialState, action = {}) => {
                 linksMap: state.linksMap.merge(action.links.reduce((res, u) => {return res.set(u.id, u)}, Map())),
                 loading: false
             }
+
 
 
         case types.LOAD_USER_LINKS:
@@ -162,4 +163,4 @@ const UsersReducer =  (state = initialState, action = {}) => {
 
 }
 
-export default UsersReducer;
+export default UsersReducers;

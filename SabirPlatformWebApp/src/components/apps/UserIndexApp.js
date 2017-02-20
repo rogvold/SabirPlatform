@@ -66,7 +66,7 @@ class UserIndexApp extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        currentUser: state.users.currentUser
+        currentUser: state.users.usersMap.get(state.users.currentUserId),
     }
 }
 
