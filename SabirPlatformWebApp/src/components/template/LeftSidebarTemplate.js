@@ -48,7 +48,8 @@ class LeftSidebarTemplate extends React.Component {
             home: 'Главная ',
             users: 'Пациенты',
             settings: 'Настройки',
-            devices: 'Устройства'
+            devices: 'Устройства',
+            dev: 'Отладка. Для разработки'
         }[active];
     }
 

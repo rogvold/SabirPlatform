@@ -15,6 +15,8 @@ import UserIndexApp from './UserIndexApp';
 import LoginApp from './LoginApp';
 import SettingsApp from './SettingsApp';
 
+import DevApp from './DevApp';
+
 // import DevApp from './DevApp.js';
 
 // import APIPlaygroundApp from './APIPlaygroundApp.js';
@@ -59,6 +61,8 @@ class App extends React.Component {
                 </Route>
 
                 <Route path="/settings" component={SettingsApp}/>
+
+                <Route path="/dev" component={DevApp}/>
 
 
             </Router>
