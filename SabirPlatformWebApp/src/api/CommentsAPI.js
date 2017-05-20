@@ -3,7 +3,7 @@
  */
 
 import * as constants from '../constants/config'
-import Parse from 'parse/react-native'
+import Parse from 'parse'
 
 const CommentsAPI = {
 
